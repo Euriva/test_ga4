@@ -56,21 +56,20 @@
     }
   </style>
 
-  <!-- ====================== 谷歌 Analytics 代码 ====================== -->
-  <!-- 把下面 G-XXXXXXX 换成你自己的 GA4 测量ID -->
+  <!-- ========== GA4 代码（已正确配置你的ID：G-8VLLFWN5B0） ========== -->
   <script async src="https://www.googletagmanager.com/gtag/js?id=G-8VLLFWN5B0"></script>
   <script>
     window.dataLayer = window.dataLayer || [];
     function gtag(){dataLayer.push(arguments);}
     gtag('js', new Date());
-    gtag('config', 'G-8VLLFWN5B0'); // 这里也要改
+    gtag('config', 'G-8VLLFWN5B0');
 
-    // 按钮点击事件（GA4 可以统计到！）
+    // 按钮点击上报
     function trackClick(btnName) {
       gtag('event', 'button_click', {
         'button_name': btnName
       });
-      alert('已触发GA4事件：' + btnName);
+      alert('已上报GA4事件：' + btnName);
     }
   </script>
 </head>
