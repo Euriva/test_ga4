@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>我的GA4测试H5</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+    body {
+      font-family: Arial, sans-serif;
+      background: #f5f5f5;
+      padding: 40px 20px;
+      text-align: center;
+    }
+    .card {
+      background: white;
+      padding: 30px;
+      border-radius: 20px;
+      max-width: 400px;
+      margin: 0 auto;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+    }
+    .avatar {
+      width: 100px;
+      height: 100px;
+      background: #4285F4;
+      border-radius: 50%;
+      margin: 0 auto 20px;
+      color: white;
+      font-size: 30px;
+      line-height: 100px;
+    }
+    h1 {
+      font-size: 24px;
+      margin-bottom: 10px;
+    }
+    .desc {
+      color: #666;
+      margin-bottom: 30px;
+    }
+    .btn {
+      display: inline-block;
+      padding: 12px 24px;
+      background: #4285F4;
+      color: white;
+      border-radius: 10px;
+      text-decoration: none;
+      margin: 5px;
+      cursor: pointer;
+      border: none;
+      font-size: 16px;
+    }
+  </style>
+
+  <!-- ====================== 谷歌 Analytics 代码 ====================== -->
+  <!-- 把下面 G-XXXXXXX 换成你自己的 GA4 测量ID -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-XXXXXXX"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'G-XXXXXXX'); // 这里也要改
+
+    // 按钮点击事件（GA4 可以统计到！）
+    function trackClick(btnName) {
+      gtag('event', 'button_click', {
+        'button_name': btnName
+      });
+      alert('已触发GA4事件：' + btnName);
+    }
+  </script>
+</head>
+
+<body>
+  <div class="card">
+    <div class="avatar">我</div>
+    <h1>我的测试H5页面</h1>
+    <p class="desc">这个页面用于测试 Google Analytics 4</p>
+
+    <button class="btn" onclick="trackClick('主页按钮')">主页按钮</button>
+    <button class="btn" onclick="trackClick('联系按钮')">联系按钮</button>
+    <button class="btn" onclick="trackClick('更多按钮')">更多按钮</button>
+  </div>
+</body>
+</html>
